@@ -7,14 +7,10 @@ function App() {
   // Add state for input and chat log
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([
-    {
-      user: "gpt",
-      message: "How can i help?"
-    },
-    {
-      user: "me",
-      message: "I want to use chatgpt"
-    }
+    // {
+    //   role: 'assistant',
+    //   message: "How are you?"
+    // }
   ]);
 
   //clear function
@@ -24,29 +20,38 @@ function App() {
   }
 
   async function handleSubmit(e) {
+
+    // Prevent the default form submission behavior, which would reload the page
     e.preventDefault();
-    let chatLogNew = [...chatLog, {user: "me", message: `${input}`}]
+
+    // Create a new chat message object with the user's input and add it to the chat log
+    let chatLogNew = [...chatLog, {"role": "user", "content": `${input}`}]
+
+    // Clear the input field by setting it to an empty string
     setInput("");
+
+    // Update the chat log state with the new message
     setChatLog(chatLogNew)
 
 
     //fetch response to the api combining the chat log array of messages and sending it as a message to localhost:3000 as a post
-    const messages = chatLogNew.map((message) => message.message).
-    join("\n")
+    
+    // Combine all chat messages into a single string with line breaks
+    const messages = chatLogNew.map((message) => message.content).join("\n")
+
+    // Send a POST request to a server (http://localhost:3080/)
     const response = await fetch("http://localhost:3080/", {
-      method: "POST",
+      method: "POST", // Use the HTTP POST method to send data to the server
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json" // Specify that the request body is in JSON format
       },
       body: JSON.stringify({
-        message: messages,
+        message: messages, // Send the combined chat messages as JSON data
         
       })
     })
     const data = await response.json();
-    setChatLog([...chatLogNew, { user: "gpt", message: `${data.message}`}])
-    
-
+    setChatLog([...chatLogNew, { "role": "assistant", "content": `${data.message}`}])
   }
   return (
     <>
@@ -83,7 +88,7 @@ const ChatMessage = ({message}) => {
   return(
     <div className="chat-message">
             <div className="message">
-              {message.message}
+              {message.content}
               </div>
           </div>
   )
