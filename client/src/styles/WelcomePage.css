@@ -1,0 +1,27 @@
+html {
+  background-color: #0b090f;
+  background: radial-gradient(ellipse at bottom, #272a43 0%, #0b090f 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.welcome-intro {
+    position: relative;
+    color: aliceblue;
+    text-align: center;
+}
+
+.welcome-image-container {
+  position: relative;
+  left: 4%;
+  top: 20vh;
+
+}
+
+.welcome-image {
+    width: 90vw;
+    height: auto;
+}
