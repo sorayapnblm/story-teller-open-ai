@@ -14,7 +14,7 @@ function WelcomePage() {
           In this game, you will be able to choose your story-tellerg
         </h1>
         <Link to="/chat" className="start-button">
-          Start Chat
+          Start
         </Link>
       </div>
       <div className="welcome-image-container">
