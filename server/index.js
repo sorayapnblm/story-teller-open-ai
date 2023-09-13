@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 const mongoose = require('mongoose')
+const UserModel = require('./models/User')
 
 const port = 3080;
 
@@ -28,19 +29,29 @@ app.post("/", async (req, res) => {
     model: "gpt-3.5-turbo",
   });
 
-    // const completion = await openai.chat.completions.create({
-    //   messages: [{ "role": "system", "content": `${message}` }],
-    //   model: "gpt-3.5-turbo",
-    // });
-
   console.log(completion.choices[0].message);
   res.json({
     message: completion.choices[0].message.content,
   });
-
 });
 
+// Connect to MongoDB
+mongoose.connect("mongodb://localhost:27017/user-story-teller", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+mongoose.connection.on('open', () => {
+  console.log("Connected to MongoDB");
+
+  // Start the server after the database connection is established
+  app.post('/register', (req, res) => {
+    UserModel.create(req.body)
+      .then(user => res.json(user))
+      .catch(err => res.json(err))
+  });
+
+  app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+  });
 });
