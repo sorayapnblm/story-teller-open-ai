@@ -1,23 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/Signup.css"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Signup = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('', {name, email, password})
+        .then(result => console.log(result))
+        .catch(err => console.log(err))
+
+    }
   return (
     <div className='constainer1'>
         <div className="container2">
-            <h2>Register</h2>
-            <form>
+            <h2>Register</h2> 
+            <form onSubmit={handleSubmit}>
                 <div className='container3'>
                     <label htmlFor="email">
                         <strong>Name</strong>
                     </label>
                     <input 
-                    type="text"
+                    type="text" 
                     placeholder='Enter Name'
                     autoComplete='off'
                     name='email'
                     className='container-form' 
+                    onChange={(e) => setName(e.target.value)}
                     />
                 </div>
                 <div className='container3'>
@@ -29,7 +42,9 @@ const Signup = () => {
                     placeholder='Enter Email'
                     autoComplete='off'
                     name='email'
-                    className='container-form' 
+                    className='container-form'
+                    onChange={(e) => setEmail (e.target.value)}
+
                     />
                 </div>
                 <div className='container3'>
@@ -42,6 +57,8 @@ const Signup = () => {
                     autoComplete='off'
                     name='password'
                     className='container-form' 
+                    onChange={(e) => setPassword(e.target.value)}
+
                     />
                 </div>
                 <button type='submit' className='button'>
