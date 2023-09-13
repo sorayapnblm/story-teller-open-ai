@@ -15,7 +15,7 @@ function WelcomePage() {
           Goodnight!
         </h1>
       </div>
-      <Link to="/chat" className="start-button">
+      <Link to="/register" className="start-button">
           Start
         </Link>
       <div className="welcome-image-container">
