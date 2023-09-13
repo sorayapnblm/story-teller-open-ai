@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/Signup.css"
 
 const Signup = () => {
   return (
@@ -48,10 +49,11 @@ const Signup = () => {
                 <p>
                     Already have an account ?
                 </p>
+                </form>
                 <button className='button1'>
                     Login
                 </button>
-            </form>
+            
         </div>
     </div>
   )
