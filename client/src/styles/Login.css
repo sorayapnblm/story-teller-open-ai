@@ -1,0 +1,10 @@
+.constainer1 {
+    position: relative;
+    padding: 5%;
+    margin-top: 10%;
+    margin-left: 35%;
+    border: 1px solid aliceblue;
+    color: aliceblue;
+    width: fit-content;
+    font-size: 2rem;
+}
