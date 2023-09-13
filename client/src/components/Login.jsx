@@ -4,27 +4,32 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // Add state for error message
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3080/login", {email, password })
+      .post("http://localhost:3080/login", { email, password })
       .then((result) => {
-        console.log(result);
-        navigate("/chat");
+        if (result.data === "Success") {
+          navigate("/chat");
+        } else {
+          // Update the error message state
+          setErrorMessage(result.data);
+        }
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <div className="constainer1">
       <div className="container2">
-        <h2>Register</h2>
+        <h2>Login</h2>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         <form onSubmit={handleSubmit}>
           <div className="container3">
             <label htmlFor="email">
@@ -53,7 +58,7 @@ const Login = () => {
             />
           </div>
           <button type="submit" className="button">
-            Register
+            Start
           </button>
         </form>
       </div>
