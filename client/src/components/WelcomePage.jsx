@@ -8,15 +8,16 @@ function WelcomePage() {
     <div className="welcome-page">
       <div className="welcome-intro">
         <h1>
-          Hi it's me Soraya <br />
-          Welcome on "Tell me a story"<br />
-          You will be able to create your own story with an artficial intelligence. <br />
-          In this game, you will be able to choose your story-tellerg
+          Oh hi! It's me Soraya! <br />
+          Welcome on "Tell me a story".<br />
+          In this game you will be able to generate thanks to artificial intelligence your own personalised stories.<br />
+          This game is ideal for kids when it comes to tell a story before sleeping, I hope you will enjoy it! <br />
+          Goodnight!
         </h1>
-        <Link to="/chat" className="start-button">
+      </div>
+      <Link to="/chat" className="start-button">
           Start
         </Link>
-      </div>
       <div className="welcome-image-container">
       <img src={test} className="welcome-image"/>
       </div>

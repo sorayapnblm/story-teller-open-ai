@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap');
+
 html {
   background-color: #0b090f;
   background: radial-gradient(ellipse at bottom, #272a43 0%, #0b090f 100%);
@@ -8,20 +10,35 @@ html {
   overflow-y: hidden;
 }
 
+.welcome-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 30vw;
+    top: 30vh;
+}
+
 .welcome-intro {
     position: relative;
-    color: aliceblue;
     text-align: center;
+    width: 40vw;
+}
+
+.welcome-intro h1{
+    color: aliceblue;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .welcome-image-container {
-  position: relative;
-  left: 4%;
-  top: 20vh;
+    position: relative;
+    left: 10vw;
+    top: 5vh;
 
 }
 
 .welcome-image {
-    width: 90vw;
+    width: 25vw;
     height: auto;
 }
