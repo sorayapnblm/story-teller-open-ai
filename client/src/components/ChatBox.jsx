@@ -1,4 +1,4 @@
-import "../styles/Chat.css";
+import "../styles/ChatBox.css";
 // import setState
 import { useState } from "react";
 
