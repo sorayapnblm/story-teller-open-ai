@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/chat" element={<ChatInterface />} />
+        <Route path="/chat" element={<ChatInterface/>} />
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>
