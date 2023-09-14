@@ -15,9 +15,9 @@ function Chat() {
 
   //clear function
 
-  function clearChat() {
-    setChatLog([]);
-  }
+  // function clearChat() {
+  //   setChatLog([]);
+  // }
 
   async function handleSubmit(e) {
 
@@ -55,19 +55,22 @@ function Chat() {
   }
   return (
     <>
-      <div className="test">
-        <aside className="sidemenu">
-          <div className="side-menu-button" onClick={clearChat}>
+      <div className="chat-container">
+          {/* <div className="side-menu-button" onClick={clearChat}>
             <span>+ </span>
             New Chat
-          </div>
-        </aside>
-        <section className="chatbox">
+          </div> */}
+        <div className="chatbox">
           {chatLog.map((message, index) => (
-            <ChatMessage key={index} message={message} />
+            <div className="chat-message">
+            <div className="message">
+              {message.content}
+            </div>
+          </div>
           ))}
-          <div className="chat-input-holder">
-            <form onSubmit={handleSubmit}>
+        </div>
+        <div className="chat-input-holder">
+            <form onSubmit={handleSubmit} className="formtest">
             <input
               rows={1}
               value={input}
@@ -78,20 +81,9 @@ function Chat() {
             </input>
              </form>
           </div>
-        </section>
       </div>
     </>
   );
-}
-
-const ChatMessage = ({message}) => {
-  return(
-    <div className="chat-message">
-            <div className="message">
-              {message.content}
-              </div>
-          </div>
-  )
 }
 
 export default Chat;
