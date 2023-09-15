@@ -15,8 +15,7 @@ function ChatInterface() {
     Speak in ${selectedLanguage}.
     Tell a story about a main character named ${mainCharacterName}, 
     the main topic of the story is about ${topic},
-    the story has ${selectedChapter} chapters.
-    Wait for the user input before the story.`;
+    the story has ${selectedChapter} chapters.`;
 
   async function handleSubmit(e) {
     e.preventDefault();
