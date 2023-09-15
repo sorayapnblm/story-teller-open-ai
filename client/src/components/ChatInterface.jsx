@@ -5,17 +5,15 @@ import { useParams } from "react-router-dom";
 
 function ChatInterface() {
   const [input, setInput] = useState("");
-  const [chatLog, setChatLog] = useState([]);
+  const [chatLog, setChatLog] = useState([
+
+  ]);
 
   const { storyteller, storytellername, mainCharacterName, selectedGender, topic, selectedChapter, selectedLanguage } = useParams();
 
   const systemMessage = `Talk like a ${storyteller}.
     Your name is ${storytellername}.
-    You are a storyteller.
-    Speak in ${selectedLanguage}.
-    Tell a story about a main character named ${mainCharacterName}, 
-    the main topic of the story is about ${topic},
-    the story has ${selectedChapter} chapters.`;
+    You are a storyteller.`;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -40,13 +38,8 @@ function ChatInterface() {
     const data = await response.json();
 
     // Modify the addLineBreaks function to return an array of paragraphs
-    const addLineBreaks = (text) => {
-      return text.split("\n").map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ));
-    };
 
-    setChatLog([...chatLogNew, { "role": "assistant", "content": addLineBreaks(data.message) }]);
+    setChatLog([...chatLogNew, { "role": "assistant", "content": data.message }]);
   }
 
   return (

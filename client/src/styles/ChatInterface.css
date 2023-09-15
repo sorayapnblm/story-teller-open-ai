@@ -45,6 +45,17 @@
     overflow: scroll;
   
   }
+
+  .message {
+    padding: 2%;
+  }
+  .message.user {
+    color: aquamarine;
+  }
+
+  .message.assistant {
+    line-height: 2;
+  }
   
   .chat-input-holder {
     position: relative;
@@ -63,8 +74,6 @@
     height: 5vh;
     border: 2px solid aliceblue;
     border-radius: 10px;
-    
-  
   }
   
   
