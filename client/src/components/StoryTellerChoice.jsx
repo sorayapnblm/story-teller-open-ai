@@ -10,13 +10,13 @@ const StoryTellerChoice = () => {
       <div className='story-teller-choice-list'>
         <ul>
           <li>
-            <Link to="/chat/fairy/Luna Dandelion">Fairy</Link>
+            <Link to="/customize/fairy/Luna Dandelion">Fairy</Link>
           </li>
           <li>
-            <Link to="/chat/pirate/Captain Jack">Pirate</Link>
+            <Link to="/customize/pirate/Captain Jack">Pirate</Link>
           </li>
           <li>
-            <Link to="/chat/witch/Seraphina Moonshadow">Witch</Link>
+            <Link to="/customize/witch/Seraphina Moonshadow">Witch</Link>
           </li>
         </ul>
       </div>

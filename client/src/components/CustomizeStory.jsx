@@ -1,18 +1,44 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "../styles/CustomizeStory.css";
+import { useParams } from "react-router-dom";
 
 const CustomizeStory = () => {
 
-  const [mainCharacterName, setMainCharacterName] = useState("");
-  const [topic, setTopic] = useState("");
+  // Get the character's name from the URL
+  const { storyteller, storytellername} = useParams();
 
-  const handleMainCharacterName = (e) => {
+  // Create state variables to store user selections
+  const [mainCharacterName, setMainCharacterName] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+  const [topic, setTopic] = useState("");
+  const [selectedChapter, setSelectedChapter] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
+  // Handle changes in the main character name input field
+  const handleMainCharacterNameChange = (e) => {
     setMainCharacterName(e.target.value);
   };
 
-    const handleTopic = (e) => {
-      setMainCharacterName(e.target.value);
-    };
+  // Handle gender selection
+  const handleGenderChange = (gender) => {
+    setSelectedGender(gender);
+  };
+
+  // Handle changes in the topic input field
+  const handleTopicChange = (e) => {
+    setTopic(e.target.value);
+  };
+
+  // Handle chapter selection
+  const handleChapterChange = (chapter) => {
+    setSelectedChapter(chapter);
+  };
+
+  // Handle language selection
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+  };
 
   return (
     <div className="customize-story">
@@ -20,70 +46,86 @@ const CustomizeStory = () => {
         Let's first customize your story!
       </div>
       <div className="customize-story-inputs">
-
         <div className="customize-story-inputs-maincharacter">
           Choose your main character name:
           <input
-          type="text"
-          value={mainCharacterName}
-          onChange={handleMainCharacterName}
-          placeholder="Enter main character name"
-        />
+            type="text"
+            value={mainCharacterName}
+            onChange={handleMainCharacterNameChange}
+            placeholder="Enter main character name"
+          />
         </div>
 
         <div className="customize-story-inputs-gender">
-        Choose your main character gender:
+          Choose your main character gender:
           <ul>
-            <li><button>Female</button></li>
-            <li><button>Male</button></li>
-            <li><button>Non-binary</button></li>
+            <li>
+              <button onClick={() => handleGenderChange("Female")}>
+                Female
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleGenderChange("Male")}>Male</button>
+            </li>
+            <li>
+              <button onClick={() => handleGenderChange("Non-binary")}>
+                Non-binary
+              </button>
+            </li>
           </ul>
         </div>
 
         <div className="customize-story-inputs-topic">
-        Choose your topic:
-        <input
-          type="text"
-          value={topic}
-          onChange={handleTopic}
-          placeholder="Enter topic"
-        />
+          Choose your topic:
+          <input
+            type="text"
+            value={topic}
+            onChange={handleTopicChange}
+            placeholder="Enter topic"
+          />
         </div>
 
         <div className="customize-story-inputs-chapter">
           Choose your chapter number:
           <ul>
-            <li><button>1</button></li>
-            <li><button>2</button></li>
-            <li><button>3</button></li>
-            <li><button>4</button></li>
-            <li><button>5</button></li>
-            <li><button>6</button></li>
-            <li><button>7</button></li>
-            <li><button>8</button></li>
-            <li><button>9</button></li>
-            <li><button>10</button></li>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((chapter) => (
+              <li key={chapter}>
+                <button onClick={() => handleChapterChange(chapter)}>
+                  {chapter}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="customize-story-inputs-language">
           Choose your language:
           <ul>
-            <li><button>English</button></li>
-            <li><button>French</button></li>
-            <li><button>Spanish</button></li>
-            <li><button>Korean</button></li>
-            <li><button>Hindi</button></li>
-            <li><button>Arabic</button></li>
-            <li><button>Russian</button></li>
-            <li><button>Portuguese</button></li>
-            <li><button>Indonesian</button></li>
-            <li><button>Chinese</button></li>
+            {[
+              "English",
+              "French",
+              "Spanish",
+              "Korean",
+              "Hindi",
+              "Arabic",
+              "Russian",
+              "Portuguese",
+              "Indonesian",
+              "Chinese",
+            ].map((language) => (
+              <li key={language}>
+                <button onClick={() => handleLanguageChange(language)}>
+                  {language}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
-
-
+        {/* Link to navigate to ChatInterface and pass selected options as state */}
+        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedGender}/${topic}/${selectedChapter}/${selectedLanguage}`}>
+          Start Chat
+        </Link>
       </div>
     </div>
   );
