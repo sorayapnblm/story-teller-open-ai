@@ -15,11 +15,10 @@ function App() {
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/storytellerchoice" element={<StoryTellerChoice/>} />
-        <Route path="/customize" element={<CustomizeStory/>} />
-        <Route path="/chat/:param1/:param2" element={<ChatInterface/>} />
+        <Route path="/customize/:storyteller/:storytellername" element={<CustomizeStory/>} />
+        <Route path="/chat/:storyteller/:storytellername/:mainCharacterName/:selectedGender/:topic/:selectedChapter/:selectedLanguage" element={<ChatInterface/>} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;
