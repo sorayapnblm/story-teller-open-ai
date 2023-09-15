@@ -1,92 +1,81 @@
+import React from "react";
 import "../styles/ChatInterface.css";
-// import setState
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-
 function ChatInterface() {
-
-  // Add state for input and chat log
   const [input, setInput] = useState("");
-  const [chatLog, setChatLog] = useState([
-  ]);
-  
-   // Get the character's name from the URL
-   const { storyteller, storytellername, mainCharacterName, selectedGender, topic, selectedChapter, selectedLanguage} = useParams();
+  const [chatLog, setChatLog] = useState([]);
 
-  //  const systemMessage = "Talk like a pirate"
+  const { storyteller, storytellername, mainCharacterName, selectedGender, topic, selectedChapter, selectedLanguage } = useParams();
 
-
-   const systemMessage = `Talk like a ${storyteller}.
+  const systemMessage = `Talk like a ${storyteller}.
     Your name is ${storytellername}.
-    You are a story teller.
+    You are a storyteller.
     Speak in ${selectedLanguage}.
     Tell a story about a main character named ${mainCharacterName}, 
     the main topic of the story is about ${topic},
     the story has ${selectedChapter} chapters.
-    Wait for the the user input before the a story.`;
-  
+    Wait for the user input before the story.`;
 
   async function handleSubmit(e) {
-
-    // Prevent the default form submission behavior, which would reload the page
     e.preventDefault();
 
-    // Create a new chat message object with the user's input and add it to the chat log
-    let chatLogNew = [...chatLog, {"role": "user", "content": `${input}`}]
-
-    // Clear the input field by setting it to an empty string
+    let chatLogNew = [...chatLog, { "role": "user", "content": `${input}` }];
     setInput("");
+    setChatLog(chatLogNew);
 
-    // Update the chat log state with the new message
-    setChatLog(chatLogNew)
+    const messages = chatLogNew.map((message) => message.content).join("\n");
 
-
-    //fetch response to the api combining the chat log array of messages and sending it as a message to localhost:3000 as a post
-    
-    // Combine all chat messages into a single string with line breaks
-    const messages = chatLogNew.map((message) => message.content).join("\n")
-
-    // Send a POST request to a server (http://localhost:3080/)
     const response = await fetch("http://localhost:3080/", {
-      method: "POST", // Use the HTTP POST method to send data to the server
+      method: "POST",
       headers: {
-        "Content-Type": "application/json" // Specify that the request body is in JSON format
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         systemMessage: systemMessage,
-        message: messages, // Send the combined chat messages as JSON data
+        message: messages,
       })
-    })
+    });
+
     const data = await response.json();
-    setChatLog([...chatLogNew, { "role": "assistant", "content": `${data.message}`}])
+
+    // Modify the addLineBreaks function to return an array of paragraphs
+    const addLineBreaks = (text) => {
+      return text.split("\n").map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ));
+    };
+
+    setChatLog([...chatLogNew, { "role": "assistant", "content": addLineBreaks(data.message) }]);
   }
+
   return (
     <>
-    <div className="chat-interface">
-      <div className="chat-container">
-        <div className="chatbox">
-          {chatLog.map((message, index) => (
-            <div className="chat-message">
-            <div className="message">
-              {message.content}
-            </div>
+      <div className="chat-interface">
+        <div className="chat-container">
+          <div className="chatbox">
+            {chatLog.map((message, index) => (
+              <div className="chat-message" key={index}>
+                <div className={`message ${message.role}`}>
+                  {/* Render the content directly */}
+                  {message.content}
+                </div>
+              </div>
+            ))}
           </div>
-          ))}
-        </div>
-        <div className="chat-input-holder">
+          <div className="chat-input-holder">
             <form onSubmit={handleSubmit} className="formtest">
-            <input
-              rows={1}
-              value={input}
-              onChange={(e)=> setInput(e.target.value)}
-              className="chat-input-textarea"
-              placeholder="Type yourmessage here"
-            >
-            </input>
-             </form>
+              <input
+                rows={1}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="chat-input-textarea"
+                placeholder="Type your message here"
+              />
+            </form>
           </div>
-      </div>
+        </div>
       </div>
     </>
   );
