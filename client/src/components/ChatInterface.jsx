@@ -1,23 +1,22 @@
 import "../styles/ChatInterface.css";
 // import setState
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+
 
 function ChatInterface() {
 
   // Add state for input and chat log
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([
-    // {
-    //   role: 'assistant',
-    //   message: "How are you?"
-    // }
   ]);
+  
 
-  //clear function
+   // Get the character's name from the URL
+   const { param1, param2 } = useParams();
 
-  // function clearChat() {
-  //   setChatLog([]);
-  // }
+   const systemMessage = `Talk like a ${param1}. Your name is ${param2}. Speak in French. You are a story teller, wait for the the user input before telling a story.`;
+  
 
   async function handleSubmit(e) {
 
@@ -46,8 +45,8 @@ function ChatInterface() {
         "Content-Type": "application/json" // Specify that the request body is in JSON format
       },
       body: JSON.stringify({
+        systemMessage: systemMessage,
         message: messages, // Send the combined chat messages as JSON data
-        
       })
     })
     const data = await response.json();
@@ -56,15 +55,7 @@ function ChatInterface() {
   return (
     <>
     <div className="chat-interface">
-      <div className="sidebar-container">
-        <div className="sidebar"></div>
-
-      </div>
       <div className="chat-container">
-          {/* <div className="side-menu-button" onClick={clearChat}>
-            <span>+ </span>
-            New Chat
-          </div> */}
         <div className="chatbox">
           {chatLog.map((message, index) => (
             <div className="chat-message">

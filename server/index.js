@@ -17,13 +17,15 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+
+
 app.post("/", async (req, res) => {
-  const { message } = req.body;
+  const { message, systemMessage } = req.body;
   console.log("const { message } = req.body:    ", message);
 
   const completion = await openai.chat.completions.create({
     messages: [
-        { "role": "system", "content": "Talk like a fairy."},
+        { "role": "system", "content": systemMessage},
         { "role": "user", "content": `${message}`}
     ],
     model: "gpt-3.5-turbo",
@@ -34,6 +36,9 @@ app.post("/", async (req, res) => {
     message: completion.choices[0].message.content,
   });
 });
+
+
+
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/user-story-teller", {

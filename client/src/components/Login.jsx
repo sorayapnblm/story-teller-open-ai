@@ -16,7 +16,7 @@ const Login = () => {
       .post("http://localhost:3080/login", { email, password })
       .then((result) => {
         if (result.data === "Success") {
-          navigate("/chat");
+          navigate("/storytellerchoice");
         } else {
           // Update the error message state
           setErrorMessage(result.data);
