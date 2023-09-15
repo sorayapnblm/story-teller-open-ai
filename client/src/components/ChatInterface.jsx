@@ -11,11 +11,20 @@ function ChatInterface() {
   const [chatLog, setChatLog] = useState([
   ]);
   
-
    // Get the character's name from the URL
-   const { param1, param2 } = useParams();
+   const { storyteller, storytellername, mainCharacterName, selectedGender, topic, selectedChapter, selectedLanguage} = useParams();
 
-   const systemMessage = `Talk like a ${param1}. Your name is ${param2}. Speak in French. You are a story teller, wait for the the user input before telling a story.`;
+  //  const systemMessage = "Talk like a pirate"
+
+
+   const systemMessage = `Talk like a ${storyteller}.
+    Your name is ${storytellername}.
+    You are a story teller.
+    Speak in ${selectedLanguage}.
+    Tell a story about a main character named ${mainCharacterName}, 
+    the main topic of the story is about ${topic},
+    the story has ${selectedChapter} chapters.
+    Wait for the the user input before the a story.`;
   
 
   async function handleSubmit(e) {
