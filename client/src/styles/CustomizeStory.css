@@ -1,3 +1,45 @@
 .customize-story {
     color: aliceblue;
+    font-family: 'Sora', sans-serif;
+    align-items: center;
+    text-align: center;
+
+}
+
+.customize-story-intro {
+    font-size: 2rem;
+    padding: 5%;
+}
+
+.customize-story-inputs {
+
+}
+
+.customize-story-inputs-maincharacter {
+    display: flex;
+    flex-direction: column;
+}
+
+.customize-story-inputs-maincharacter input{
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    width: 20vw;
+    margin: auto;
+
+}
+
+.customize-story-inputs-gender ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.customize-story-inputs-topic {
+    display: flex;
+    flex-direction: column;
+}
+
+.customize-story-inputs-language ul{
+    display: flex;
+    list-style-type: none;
 }
