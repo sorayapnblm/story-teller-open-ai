@@ -8,7 +8,7 @@
 
 .customize-story-intro {
     font-size: 2rem;
-    padding: 5%;
+    padding: 2%;
 }
 
 .customize-story-inputs {
@@ -18,28 +18,151 @@
 .customize-story-inputs-maincharacter {
     display: flex;
     flex-direction: column;
+    padding-bottom: 2%;
+}
+
+.customize-story-inputs-maincharacter h2{
+    font-size: 1.2rem;
 }
 
 .customize-story-inputs-maincharacter input{
+    width: 30vw;
     font-family: 'Sora', sans-serif;
     font-size: 1rem;
-    text-align: center;
-    width: 20vw;
     margin: auto;
+    text-align: center;
+    height: 4vh;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
 
 }
 
-.customize-story-inputs-gender ul{
+.customize-story-inputs-pronouns {
+    padding-bottom:0;
+
+
+}
+
+.customize-story-inputs-pronouns h2{
+    font-size: 1.2rem;
+}
+
+.customize-story-inputs-pronouns ul{
     display: flex;
     list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    padding: 0%;
 }
+
+.customize-story-inputs-pronouns button{
+    width: 8vw;
+    height: 8vh;
+    border: 1px solid aliceblue;
+    border-radius: 50%;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #1a1c2d;
+    transition: background-color 1.5s, color 1s;
+    font-size: 0.9rem;
+    font-family: 'Sora', sans-serif;
+    padding-bottom: 0%;
+
+}
+
+.customize-story-inputs-pronouns button:hover {
+    background-color: aliceblue;
+    color: #272a43;
+  }
 
 .customize-story-inputs-topic {
     display: flex;
     flex-direction: column;
+    padding-bottom: 2%;
+
+}
+
+.customize-story-inputs-topic h2 {
+    font-size: 1.2rem;
+}
+
+.customize-story-inputs-topic input {
+    width: 30vw;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+    height: 4vh;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+}
+
+.customize-story-inputs-language h2 {
+    font-size: 1.2rem;
+    padding-bottom: 1%;
 }
 
 .customize-story-inputs-language ul{
     display: flex;
     list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 0%;
 }
+
+.customize-story-inputs-language button{
+    width: 8vw;
+    height: 8vh;
+    border: 1px solid aliceblue;
+    border-radius: 50%;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #1a1c2d;
+    transition: background-color 1.5s, color 1s;
+    font-size: 0.9rem;
+    font-family: 'Sora', sans-serif;
+
+}
+
+.customize-story-inputs-language button:hover {
+    background-color: aliceblue;
+    color: #272a43;
+  }
+
+
+.customize-story-link-container {
+    padding-top: 2%;
+}
+
+.customize-story-link {
+  display: inline-block;
+  padding: 1%;
+  border: 1px solid rgb(214, 139, 165);
+  border-radius: 50%;
+  background-color: #272a43;
+  color: rgb(214, 139, 165);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 1.5s, color 1s;
+  /* margin-top: 20px; */
+  padding: 2%;
+}
+
+.customize-story-link:hover {
+    background-color: rgb(214, 139, 165);
+    color: #272a43;
+
+}
+
+
+/* CustomizeStory.css */
+
+/* Style for the selected button */
+.selected-button {
+    background-color: #272a43; /* Background color for selected button */
+    color: aliceblue; /* Text color for selected button */
+    font-weight: bold;
+  }
