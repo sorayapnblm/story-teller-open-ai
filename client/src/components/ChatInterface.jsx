@@ -4,7 +4,7 @@ import "../styles/ChatInterface.css";
 
 function ChatInterface() {
   const [input, setInput] = useState("");
-  const { storyteller, storytellername, mainCharacterName, selectedPronouns, topic, selectedChapter, selectedLanguage } = useParams();
+  const { storyteller, storytellername, mainCharacterName, selectedPronouns, topic, selectedLanguage } = useParams();
 
   const [chatLog, setChatLog] = useState([
     {
