@@ -10,7 +10,7 @@ const CustomizeStory = () => {
 
   // Create state variables to store user selections
   const [mainCharacterName, setMainCharacterName] = useState("");
-  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedPronouns, setSelectedPronouns] = useState("");
   const [topic, setTopic] = useState("");
   const [selectedChapter, setSelectedChapter] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -20,9 +20,9 @@ const CustomizeStory = () => {
     setMainCharacterName(e.target.value);
   };
 
-  // Handle gender selection
-  const handleGenderChange = (gender) => {
-    setSelectedGender(gender);
+  // Handle pronouns selection
+  const handlePronounsChange = (pronouns) => {
+    setSelectedPronouns(pronouns);
   };
 
   // Handle changes in the topic input field
@@ -60,16 +60,16 @@ const CustomizeStory = () => {
           Choose your main character gender:
           <ul>
             <li>
-              <button onClick={() => handleGenderChange("Female")}>
-                Female
+              <button onClick={() => handlePronounsChange("She her hers")}>
+              She her hers
               </button>
             </li>
             <li>
-              <button onClick={() => handleGenderChange("Male")}>Male</button>
+              <button onClick={() => handlePronounsChange("He him his")}>He him his</button>
             </li>
             <li>
-              <button onClick={() => handleGenderChange("Non-binary")}>
-                Non-binary
+              <button onClick={() => handlePronounsChange("They them their")}>
+              They them their
               </button>
             </li>
           </ul>
@@ -123,7 +123,7 @@ const CustomizeStory = () => {
         </div>
 
         {/* Link to navigate to ChatInterface and pass selected options as state */}
-        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedGender}/${topic}/${selectedChapter}/${selectedLanguage}`}>
+        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedPronouns}/${topic}/${selectedChapter}/${selectedLanguage}`}>
           Start Chat
         </Link>
       </div>
