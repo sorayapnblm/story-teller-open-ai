@@ -3,6 +3,10 @@ import { Link } from "react-router-dom"; // Import Link for navigation
 import "../styles/CustomizeStory.css";
 import { useParams } from "react-router-dom";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const CustomizeStory = () => {
   // Get the character's name from the URL
   const { storyteller, storytellername } = useParams();
@@ -33,20 +37,53 @@ const CustomizeStory = () => {
     setSelectedLanguage(language);
   };
 
+  // Create state variables to track the input values and styles
+  // const [mainCharacterName, setMainCharacterName] = useState("");
+  const [characterNameInputStyle, setCharacterNameInputStyle] = useState({});
+  // const [topic, setTopic] = useState("");
+  const [topicInputStyle, setTopicInputStyle] = useState({});
+
+  // Handle the Enter key press event for the character name input
+  const handleCharacterNameEnterKeyUp = (e) => {
+    if (e.key === "Enter") {
+      // Change the character name input style when Enter is pressed
+      setCharacterNameInputStyle({
+        backgroundColor: "#1a1c2d",
+        color: "aliceblue",
+        fontWeight: "bold",
+      });
+    }
+  };
+
+  // Handle the Enter key press event for the topic input
+  const handleTopicEnterKeyUp = (e) => {
+    if (e.key === "Enter") {
+      // Change the topic input style when Enter is pressed
+      setTopicInputStyle({
+        backgroundColor: "#1a1c2d",
+        color: "aliceblue",
+        fontWeight: "bold",
+      });
+    }
+  };
+
+
   return (
     <div className="customize-story">
-      <div className="customize-story-intro">
+      <div className="customize-story-intro" data-aos="fade-down" data-aos-duration="3000">
         Let's first customize your story.
       </div>
-      <div className="customize-story-inputs">
+      <div className="customize-story-inputs" data-aos="fade-up" data-aos-duration="3000">
         <div className="customize-story-inputs-maincharacter">
           <h2>Choose your main character name:</h2>
           <input
-            type="text"
-            value={mainCharacterName}
-            onChange={handleMainCharacterNameChange}
-            placeholder="Enter main character name"
-            />
+          type="text"
+          value={mainCharacterName}
+          onChange={(e) => setMainCharacterName(e.target.value)}
+          placeholder="Enter main character name"
+          onKeyUp={handleCharacterNameEnterKeyUp}
+          style={characterNameInputStyle}
+        />
         </div>
 
         <div className="customize-story-inputs-pronouns">
@@ -88,11 +125,13 @@ const CustomizeStory = () => {
         <div className="customize-story-inputs-topic">
           <h2>Choose your topic:</h2>
           <input
-            type="text"
-            value={topic}
-            onChange={handleTopicChange}
-            placeholder="Enter topic"
-          />
+          type="text"
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          placeholder="Enter topic"
+          onKeyUp={handleTopicEnterKeyUp}
+          style={topicInputStyle}
+        />
         </div>
 
         <div className="customize-story-inputs-language">
