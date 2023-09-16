@@ -12,7 +12,6 @@ const CustomizeStory = () => {
   const [mainCharacterName, setMainCharacterName] = useState("");
   const [selectedPronouns, setSelectedPronouns] = useState("");
   const [topic, setTopic] = useState("");
-  const [selectedChapter, setSelectedChapter] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
   // Handle changes in the main character name input field
@@ -30,11 +29,6 @@ const CustomizeStory = () => {
     setTopic(e.target.value);
   };
 
-  // Handle chapter selection
-  const handleChapterChange = (chapter) => {
-    setSelectedChapter(chapter);
-  };
-
   // Handle language selection
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
@@ -43,7 +37,7 @@ const CustomizeStory = () => {
   return (
     <div className="customize-story">
       <div className="customize-story-intro">
-        Let's first customize your story!
+        Let's first customize your story.
       </div>
       <div className="customize-story-inputs">
         <div className="customize-story-inputs-maincharacter">
@@ -85,19 +79,6 @@ const CustomizeStory = () => {
           />
         </div>
 
-        <div className="customize-story-inputs-chapter">
-          Choose your chapter number:
-          <ul>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((chapter) => (
-              <li key={chapter}>
-                <button onClick={() => handleChapterChange(chapter)}>
-                  {chapter}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <div className="customize-story-inputs-language">
           Choose your language:
           <ul>
@@ -106,12 +87,22 @@ const CustomizeStory = () => {
               "French",
               "Spanish",
               "Korean",
-              "Hindi",
+              "Hindi"
+            ].map((language) => (
+              <li key={language}>
+                <button onClick={() => handleLanguageChange(language)}>
+                  {language}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <ul>
+            {[
               "Arabic",
               "Russian",
               "Portuguese",
               "Indonesian",
-              "Chinese",
+              "Chinese"
             ].map((language) => (
               <li key={language}>
                 <button onClick={() => handleLanguageChange(language)}>
@@ -123,7 +114,7 @@ const CustomizeStory = () => {
         </div>
 
         {/* Link to navigate to ChatInterface and pass selected options as state */}
-        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedPronouns}/${topic}/${selectedChapter}/${selectedLanguage}`}>
+        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedPronouns}/${topic}/${selectedLanguage}`}>
           Start Chat
         </Link>
       </div>
