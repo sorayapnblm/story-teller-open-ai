@@ -41,7 +41,9 @@ const CustomizeStory = () => {
       </div>
       <div className="customize-story-inputs">
         <div className="customize-story-inputs-maincharacter">
+          <h2>
           Choose your main character name:
+          </h2>
           <input
             type="text"
             value={mainCharacterName}
@@ -50,8 +52,10 @@ const CustomizeStory = () => {
           />
         </div>
 
-        <div className="customize-story-inputs-gender">
+        <div className="customize-story-inputs-pronouns">
+          <h2>
           Choose your main character gender:
+          </h2>
           <ul>
             <li>
               <button onClick={() => handlePronounsChange("She her hers")}>
@@ -70,7 +74,9 @@ const CustomizeStory = () => {
         </div>
 
         <div className="customize-story-inputs-topic">
+          <h2>
           Choose your topic:
+          </h2>
           <input
             type="text"
             value={topic}
@@ -80,7 +86,9 @@ const CustomizeStory = () => {
         </div>
 
         <div className="customize-story-inputs-language">
+          <h2>
           Choose your language:
+          </h2>
           <ul>
             {[
               "English",
@@ -113,10 +121,12 @@ const CustomizeStory = () => {
           </ul>
         </div>
 
-        {/* Link to navigate to ChatInterface and pass selected options as state */}
-        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedPronouns}/${topic}/${selectedLanguage}`}>
-          Start Chat
+        <div className="customize-story-link-container">
+        <Link to={`/chat/${storyteller}/${storytellername}/${mainCharacterName}/${selectedPronouns}/${topic}/${selectedLanguage}`} 
+        className="customize-story-link">
+          Start
         </Link>
+        </div>
       </div>
     </div>
   );
