@@ -16,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/storytellerchoice" element={<StoryTellerChoice/>} />
         <Route path="/customize/:storyteller/:storytellername" element={<CustomizeStory/>} />
-        <Route path="/chat/:storyteller/:storytellername/:mainCharacterName/:selectedGender/:topic/:selectedChapter/:selectedLanguage" element={<ChatInterface/>} />
+        <Route path="/chat/:storyteller/:storytellername/:mainCharacterName/:selectedGender/:topic/:selectedLanguage" element={<ChatInterface/>} />
       </Routes>
     </BrowserRouter>
   );
