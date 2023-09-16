@@ -1,0 +1,45 @@
+/* Style the bubble links container */
+.story-teller-choice {
+    position: relative;
+    color: aliceblue;
+    text-align: center;
+    top: 14vh;
+    font-family: 'Sora', sans-serif;
+  }
+  
+  .story-teller-title {
+    padding-bottom: 10%;
+    font-size: 1.5rem;
+  }
+  
+  .story-teller-choice-list ul {
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin: auto;
+  }
+  
+  /* Style the bubble links */
+  .bubble-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 30vh;
+    border: 1px solid aliceblue;
+    border-radius: 50%;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: none;
+    transition: background-color 1.5s, color 1s;
+    font-size: 2rem;
+  }
+  
+  /* Hover effect */
+  .bubble-link:hover {
+    background-color: aliceblue;
+    color: #272a43;
+  }
+  
