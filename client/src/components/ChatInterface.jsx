@@ -1,24 +1,29 @@
-import React from "react";
-import "../styles/ChatInterface.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import "../styles/ChatInterface.css";
 
 function ChatInterface() {
   const [input, setInput] = useState("");
+  const { storyteller, storytellername, mainCharacterName, selectedPronouns, topic, selectedChapter, selectedLanguage } = useParams();
+
   const [chatLog, setChatLog] = useState([
-
+    {
+      role: "user",
+      content: `Tell me a story about a main character named ${mainCharacterName}.
+      For the main character use the pronouns ${selectedPronouns}.
+      The main topic of the story is ${topic}.`,
+    },
   ]);
-
-  const { storyteller, storytellername, mainCharacterName, selectedGender, topic, selectedChapter, selectedLanguage } = useParams();
 
   const systemMessage = `Talk like a ${storyteller}.
     Your name is ${storytellername}.
-    You are a storyteller.`;
+    You are a storyteller.
+    At the end of the story ask to the user if they want to add a new part to the story. Continue the story with what the user added.`;
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    let chatLogNew = [...chatLog, { "role": "user", "content": `${input}` }];
+    let chatLogNew = [...chatLog, { role: "user", content: `${input}` }];
     setInput("");
     setChatLog(chatLogNew);
 
@@ -27,19 +32,19 @@ function ChatInterface() {
     const response = await fetch("http://localhost:3080/", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         systemMessage: systemMessage,
         message: messages,
-      })
+      }),
     });
 
     const data = await response.json();
 
     // Modify the addLineBreaks function to return an array of paragraphs
 
-    setChatLog([...chatLogNew, { "role": "assistant", "content": data.message }]);
+    setChatLog([...chatLogNew, { role: "assistant", content: data.message }]);
   }
 
   return (
@@ -50,8 +55,8 @@ function ChatInterface() {
             {chatLog.map((message, index) => (
               <div className="chat-message" key={index}>
                 <div className={`message ${message.role}`}>
-                  {/* Render the content directly */}
-                  {message.content}
+                  {/* Render the content directly, but skip rendering for the first message */}
+                  {index > 0 ? message.content : null}
                 </div>
               </div>
             ))}
