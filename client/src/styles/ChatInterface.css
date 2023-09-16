@@ -56,6 +56,11 @@
   .message.assistant {
     line-height: 2;
   }
+
+  .waiting-message {
+    color: rgb(214, 139, 165);
+    text-align: center;
+  }
   
   .chat-input-holder {
     position: relative;
