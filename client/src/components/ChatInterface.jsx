@@ -24,7 +24,9 @@ function ChatInterface() {
   const systemMessage = `Talk like a ${storyteller}.
     Your name is ${storytellername}.
     You are a storyteller.
-    At the end of the story, ask the user if they want to add a new part to the story. Continue the story with what the user added.`;
+    Present you first.
+    At the end of the story, ask the user if they want to add a new part to the story. Continue the story with what the user added.
+    Only speak in ${selectedLanguage}`;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -92,6 +94,10 @@ function ChatInterface() {
             </form>
           </div>
         </div>
+        <div class="chat-interface-copyright">
+        Built and designed by Soraya Panambalom. <br />
+        All right reserved. &copy;
+      </div>
       </div>
     </>
   );
