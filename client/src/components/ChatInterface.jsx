@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/ChatInterface.css";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 function ChatInterface() {
   const [input, setInput] = useState("");
   const [isWaiting, setIsWaiting] = useState(false); // State variable for "waiting" message
@@ -59,7 +63,7 @@ function ChatInterface() {
 
   return (
     <>
-      <div className="chat-interface">
+      <div className="chat-interface" data-aos="fade-up" data-aos-duration="3000">
         <div className="chat-container">
           <div className="chatbox">
             <div className="waiting-message">
@@ -83,7 +87,7 @@ function ChatInterface() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="chat-input-textarea"
-                placeholder="Type your message here"
+                placeholder="Type your message here."
               />
             </form>
           </div>
