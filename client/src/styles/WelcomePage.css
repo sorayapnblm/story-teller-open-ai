@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap");
 
 html {
   background-color: #0b090f;
@@ -11,34 +11,68 @@ html {
 }
 
 .welcome-page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    left: 30vw;
-    top: 10vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 30vw;
+  top: 6vh;
+  font-family: "Sora", sans-serif;
 }
 
 .welcome-intro {
-    position: relative;
-    text-align: center;
-    width: 40vw;
+  position: relative;
+  text-align: center;
+  width: 40vw;
 }
 
-.welcome-intro h1{
-    color: aliceblue;
-    font-family: 'Sora', sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
+.welcome-intro h1 {
+  color: aliceblue;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.welcome-image-container {
-    position: relative;
-    left: 10vw;
-    top: 5vh;
-
+.welcome-image-container-bubble {
+  position: relative;
+  left: -3vw;
+  top: -26vh;
 }
 
-.welcome-image {
-    width: 24vw;
-    height: auto;
+.bubble-image {
+  width: 48vw;
+  height: auto;
+}
+
+.welcome-image-container-soraya {
+  position: relative;
+  left: 5vw;
+  top: -30vh;
+}
+
+.soraya-image {
+  width: 24vw;
+  height: auto;
+}
+
+.welcome-page-start-button {
+  position: relative;
+  top: -30vh;
+  left: 15vw;
+  display: inline-block;
+  padding: 2% 1%;
+  border: 1px solid aliceblue;
+  border-radius: 50%;
+  background-color: #272a43;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 1.5s, color 1s;
+  margin-top: 20px;
+  text-align: center;
+  width: 6vw;
+}
+
+.welcome-page-start-button:hover {
+  background-color: rgb(214, 139, 165);
+  color: #272a43;
 }
