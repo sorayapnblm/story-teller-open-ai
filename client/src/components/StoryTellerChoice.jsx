@@ -46,7 +46,7 @@ const StoryTellerChoice = () => {
             >
               Seraphina Moonshadow
               <br />
-              the witch
+              the witch.
             </Link>
           </li>
         </ul>
