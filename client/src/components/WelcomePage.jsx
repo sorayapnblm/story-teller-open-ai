@@ -16,8 +16,8 @@ function WelcomePage() {
     <div className="welcome-page" data-aos="fade-down" data-aos-duration="3000">
       <div className="welcome-intro">
         <h1>
-          Oh hi! It's me Soraya! <br />
-          Welcome on "Tell me a story AI".
+          Oh hi! It's me <span>Soraya</span> !<br />
+          Welcome on <span>Tell me a story AI</span>
           <br />
           In this game you will be able to generate thanks to artificial
           intelligence your own personalised stories. <br />

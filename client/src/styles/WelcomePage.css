@@ -14,10 +14,13 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* left: 30vw; */
   top: 2vh;
   font-family: "Sora", sans-serif;
   text-align: center;
+}
+
+.welcome-page span {
+  color: rgb(209, 86, 90);
 }
 
 .welcome-intro {
