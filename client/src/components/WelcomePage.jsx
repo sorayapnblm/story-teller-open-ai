@@ -15,9 +15,9 @@ function WelcomePage() {
           Goodnight!
         </h1>
       </div>
-      <Link to="/register" className="start-button">
+      {/* <Link to="/register" className="start-button">
           Start
-        </Link>
+        </Link> */}
       <div className="welcome-image-container">
       <img src={test} className="welcome-image"/>
       </div>

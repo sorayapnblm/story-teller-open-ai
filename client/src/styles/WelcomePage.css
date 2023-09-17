@@ -15,7 +15,7 @@ html {
     display: flex;
     flex-direction: column;
     left: 30vw;
-    top: 30vh;
+    top: 10vh;
 }
 
 .welcome-intro {
@@ -39,6 +39,6 @@ html {
 }
 
 .welcome-image {
-    width: 25vw;
+    width: 24vw;
     height: auto;
 }
