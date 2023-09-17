@@ -26,7 +26,7 @@ function ChatInterface() {
     You are a storyteller.
     Present you first.
     At the end of the story, ask the user if they want to add a new part to the story. Continue the story with what the user added.
-    Only speak in ${selectedLanguage}`;
+    You only speak in ${selectedLanguage}`;
 
   async function handleSubmit(e) {
     e.preventDefault();
