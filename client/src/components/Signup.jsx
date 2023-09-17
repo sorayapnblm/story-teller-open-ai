@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +25,7 @@ const Signup = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="signup">
+    <div className="signup" data-aos="fade-down" data-aos-duration="3000">
       <h1>Sign up.</h1>
       <form onSubmit={handleSubmit}>
         <div className="signup-container">

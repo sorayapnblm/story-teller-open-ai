@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/Login.css"
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login" data-aos="fade-up" data-aos-duration="3000">
         <h1>Log in.</h1>
         <form onSubmit={handleSubmit}>
           <div className="login-container">
