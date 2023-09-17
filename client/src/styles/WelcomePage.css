@@ -73,6 +73,7 @@ html {
 }
 
 .welcome-page-start-button:hover {
-  background-color: rgb(214, 139, 165);
-  color: #272a43;
+  background-color: rgb(209, 86, 90);
+  border: 1px solid rgb(209, 86, 90);
+  color: aliceblue;
 }
