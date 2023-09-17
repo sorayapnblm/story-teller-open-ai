@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 const Signup = () => {
@@ -62,16 +62,16 @@ const Signup = () => {
           />
         </div>
         <div className="signup-button-container">
-        <button type="submit" className="signup-button">
-          Register
-        </button>
+          <button type="submit" className="signup-button">
+            Register
+          </button>
         </div>
       </form>
       <div className="signup-login-button-container">
-      <h2>If you are registered, please log in.</h2>
-      <Link to="/login" className="signup-login-button">
-        Login
-      </Link>
+        <h2>If you are registered, please log in.</h2>
+        <Link to="/login" className="signup-login-button">
+          Login
+        </Link>
       </div>
       <div class="signup-copyright">
         Built and designed by Soraya Panambalom. <br />

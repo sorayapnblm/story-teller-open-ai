@@ -8,7 +8,7 @@ AOS.init();
 
 function ChatInterface() {
   const [input, setInput] = useState("");
-  const [isWaiting, setIsWaiting] = useState(false); // State variable for "waiting" message
+  const [isWaiting, setIsWaiting] = useState(false);
   const { storyteller, storytellername, mainCharacterName, selectedPronouns, topic, selectedLanguage } = useParams();
 
 
@@ -37,7 +37,6 @@ function ChatInterface() {
 
     const messages = chatLogNew.map((message) => message.content).join("\n");
 
-    // Display "Wait" message
     setIsWaiting(true);
 
     const response = await fetch("http://localhost:3080/", {
@@ -53,10 +52,7 @@ function ChatInterface() {
 
     const data = await response.json();
 
-    // Remove "Wait" message
     setIsWaiting(false);
-
-    // Modify the addLineBreaks function to return an array of paragraphs
 
     setChatLog([...chatLogNew, { role: "assistant", content: data.message }]);
 
@@ -74,7 +70,6 @@ function ChatInterface() {
             {chatLog.map((message, index) => (
               <div className="chat-message" key={index}>
                 <div className={`message ${message.role}`}>
-                  {/* Render the content directly, but skip rendering for the first message */}
                   {index > 0 ? message.content : null}
                 </div>
               </div>

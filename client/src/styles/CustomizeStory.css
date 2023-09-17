@@ -149,7 +149,6 @@
   font-weight: bold;
   font-size: 1.2rem;
   transition: background-color 1.5s, color 1s;
-  /* margin-top: 20px; */
   padding: 2%;
 }
 
@@ -159,10 +158,9 @@
 }
 
 .input-enter-pressed {
-    background-color: rgb(11, 48, 79); /* Background color for Enter key press */
+    background-color: rgb(11, 48, 79);
     color: aliceblue;
     font-weight: bold;
-    /* Add other styles as needed */
   }
 
 .customize-story-copyright {
