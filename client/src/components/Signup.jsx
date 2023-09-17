@@ -73,7 +73,10 @@ const Signup = () => {
         Login
       </Link>
       </div>
-      
+      <div class="signup-copyright">
+        Built and designed by Soraya Panambalom. <br />
+        All right reserved. &copy;
+      </div>
     </div>
   );
 };

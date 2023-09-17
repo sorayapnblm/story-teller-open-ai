@@ -18,7 +18,7 @@
 .login h1 {
   font-size: 3rem;
   margin: 0%;
-  padding-bottom: 15%;
+  /* padding-bottom: 10%; */
 }
 
 .login h2 {
@@ -44,11 +44,12 @@
 
 .error-message {
   color: rgb(217, 63, 63);
-  font-size: 2rem;
+  font-size: 1rem;
+  padding: 0%;
 }
 
 .login-button-container {
-    padding-top: 10%;
+  padding-top: 10%;
 }
 
 .login-button {
@@ -70,4 +71,11 @@
   background-color: rgb(214, 139, 165);
   border: 1px solid rgb(214, 139, 165);
   color: #272a43;
+}
+
+.login-copyright {
+  position: relative;
+  top: 10vh;
+  color: aliceblue;
+  font-size: 1rem;
 }

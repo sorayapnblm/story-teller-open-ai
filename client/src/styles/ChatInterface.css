@@ -1,84 +1,68 @@
 .chat-interface {
-    display: flex;
+  position: relative;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sora", sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.sidebar-container{
-    margin: 0%;
-    padding: 0;
-    position: relative;
-    top: 4vh;
-    left: 4vw;
-    width: fit-content;
-    color: aliceblue;
-
+.chat-container {
+  position: relative;
+  margin: auto;
+  margin: 0%;
 }
 
-
-.sidebar {
-    border: 1px solid aliceblue;
-    border-radius: 20px;
-    width: 15vw;
-    height: 90vh;
-    margin: 0%;
+.chatbox {
+  position: relative;
+  color: aliceblue;
+  border: 1px solid aliceblue;
+  width: 45vw;
+  height: 55vh;
+  padding: 10%;
+  border-radius: 15%;
+  font-family: "Sora", sans-serif;
+  margin: 0%;
+  overflow: scroll;
 }
 
+.message {
+  padding: 2%;
+}
+.message.user {
+  color: aquamarine;
+}
 
-.chat-container{
-    position: relative;
-    width: fit-content;
-    margin: 0%;
-    top: 5vh;
-    left: 20vw;
-  }
-  
-  
-  .chatbox {
-    position: relative;
-    color: aliceblue;
-    border: 1px solid aliceblue;
-    width: 45vw;
-    height: 55vh;
-    padding: 10%;
-    border-radius: 15%;
-    font-family: 'Sora', sans-serif;
-    margin: 0%;
-    overflow: scroll;
-  
-  }
+.message.assistant {
+  line-height: 2;
+}
 
-  .message {
-    padding: 2%;
-  }
-  .message.user {
-    color: aquamarine;
-  }
+.waiting-message {
+  color: rgb(214, 139, 165);
+  text-align: center;
+}
 
-  .message.assistant {
-    line-height: 2;
-  }
+.chat-input-holder {
+  position: relative;
+  top: 5vh;
+  width: 50vw;
+}
 
-  .waiting-message {
-    color: rgb(214, 139, 165);
-    text-align: center;
-  }
-  
-  .chat-input-holder {
-    position: relative;
-    left: 1vw;
-    top: 5vh;
-    width: 50vw;
-    /* border: 1px solid red;
-    border-radius: 10px; */
-  }
+.chat-input-textarea {
+  width: 55vw;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  height: 5vh;
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+}
 
-  .chat-input-textarea {
-    width: 55vw;
-    font-family: 'Sora', sans-serif;
-    font-size: 1rem;
-    text-align: center;
-    height: 5vh;
-    border: 2px solid aliceblue;
-    border-radius: 10px;
-  }
-  
-  
+.chat-interface-copyright {
+  position: relative;
+  top: 8vh;
+  color: aliceblue;
+  font-size: 1rem;
+}

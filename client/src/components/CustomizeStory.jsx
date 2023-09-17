@@ -175,6 +175,10 @@ const CustomizeStory = () => {
           </Link>
         </div>
       </div>
+      <div class="customize-story-copyright">
+        Built and designed by Soraya Panambalom. <br />
+        All right reserved. &copy;
+      </div>
     </div>
   );
 };

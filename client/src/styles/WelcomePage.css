@@ -14,49 +14,55 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  left: 30vw;
-  top: 6vh;
+  /* left: 30vw; */
+  top: 2vh;
   font-family: "Sora", sans-serif;
+  text-align: center;
 }
 
 .welcome-intro {
   position: relative;
-  text-align: center;
   width: 40vw;
+  margin: auto;
+  padding-top: 2%;
 }
 
 .welcome-intro h1 {
   color: aliceblue;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .welcome-image-container-bubble {
   position: relative;
-  left: -3vw;
-  top: -26vh;
+  left: 5vw;
+  top: -1vh;
 }
 
 .bubble-image {
-  width: 48vw;
+  width: 5vw;
   height: auto;
 }
 
 .welcome-image-container-soraya {
   position: relative;
-  left: 5vw;
-  top: -30vh;
+  padding-top: 4%;
+  top: -10vh;
 }
 
 .soraya-image {
-  width: 24vw;
+  width: 23vw;
   height: auto;
+}
+
+.welcome-page-start-button-container {
+  position: relative;
+  padding-bottom: 2%;
+  top: -10vh;
 }
 
 .welcome-page-start-button {
   position: relative;
-  top: -30vh;
-  left: 15vw;
   display: inline-block;
   padding: 2% 1%;
   border: 1px solid aliceblue;
@@ -76,4 +82,11 @@ html {
   background-color: rgb(209, 86, 90);
   border: 1px solid rgb(209, 86, 90);
   color: aliceblue;
+}
+
+.welcome-page-copyright {
+  position: relative;
+  top: -10vh;
+  color: aliceblue;
+  font-size: 1rem;
 }

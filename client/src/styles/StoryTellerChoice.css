@@ -9,7 +9,7 @@
   
   .story-teller-title {
     padding-bottom: 10%;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   
   .story-teller-choice-list ul {
@@ -43,3 +43,9 @@
     color: #272a43;
   }
   
+.story-teller-choice-copyright {
+  position: relative;
+  top: 25vh;
+  color: aliceblue;
+  font-size: 1rem;
+}

@@ -61,14 +61,18 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <div className="login-button-container">
           <button type="submit" className="login-button">
             Start
           </button>
           </div>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
           
         </form>
+        <div class="login-copyright">
+        Built and designed by Soraya Panambalom. <br />
+        All right reserved. &copy;
+      </div>
     </div>
   );
 };
