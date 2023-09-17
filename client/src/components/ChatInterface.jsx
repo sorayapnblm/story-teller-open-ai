@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2023 Soraya PANAMBALOM
+ */
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/ChatInterface.css";

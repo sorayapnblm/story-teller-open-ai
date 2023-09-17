@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2023 Soraya PANAMBALOM
+ */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/CustomizeStory.css";

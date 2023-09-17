@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2023 Soraya PANAMBALOM
+ */
 import React from "react";
 import "../styles/WelcomePage.css";
 import soraya from "../assets/soraya.png";
