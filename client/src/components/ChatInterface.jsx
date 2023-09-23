@@ -26,10 +26,10 @@ function ChatInterface() {
 
   const systemMessage = `Talk like a ${storyteller}.
     Your name is ${storytellername}.
+    You must only speak in ${selectedLanguage} with the user.
     You are a storyteller.
     Present you first.
-    At the end of the story, ask the user if they want to add a new part to the story. Continue the story with what the user added.
-    You only speak in ${selectedLanguage}`;
+    At the end of the story, ask the user if they want to add a new part to the story. Continue the story with what the user added.`;
 
   async function handleSubmit(e) {
     e.preventDefault();
