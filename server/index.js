@@ -9,7 +9,6 @@ const UserModel = require('./models/User')
 const port = 3080;
 
 const openai = new OpenAI({
-  organization: "org-tI54CUkXDICLxrt34bIoBqvN",
   apiKey: process.env.OPENAI_API_KEY,
 });
 
@@ -21,7 +20,6 @@ app.use(cors());
 
 app.post("/", async (req, res) => {
   const { message, systemMessage } = req.body;
-  console.log("const { message } = req.body:    ", message);
 
   const completion = await openai.chat.completions.create({
     messages: [
