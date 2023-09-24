@@ -13,15 +13,16 @@ In this application you will be able to create an account and play with the AI s
 
 2. Create a .env file in the server folder and paste your own Open AI API key.
 
-3. In the "server" folder run 
+3. In the "server" folder run
+4. 
 
                    node index.js
 
-4. In the "client" folder run
+5. In the "client" folder run
 
                     npm run dev
 
-5. Navigate to `http://localhost:5173` to display the application. 
+6. Navigate to `http://localhost:5173` to display the application. 
 
 ## Database Setup
 
