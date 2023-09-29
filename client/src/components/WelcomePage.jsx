@@ -21,7 +21,7 @@ function WelcomePage() {
           <br />
           In this game you will be able to generate thanks to artificial
           intelligence your own personalised stories. <br />
-          You will meet Luna, Scarlet and Seraphina, they are storry tellers !
+          You will meet Luna, Scarlet and Seraphina, they are story tellers !
           <br />
           This game is ideal if you need a story before sleep, I hope you will
           enjoy it! <br />
