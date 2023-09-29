@@ -3,6 +3,8 @@
 Tell Me a Story AI is a web game application that allows users to generate personalized stories using artificial intelligence thanks to the Open AI API.
 In this application you will be able to create an account and play with the AI story tellers to create your own unique stories.
 
+![image1](client/src/assets/presentationpic1.png)
+
 
 ## Getting Started
 
