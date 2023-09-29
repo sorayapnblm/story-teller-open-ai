@@ -4,7 +4,16 @@ Tell Me a Story AI is a web game application that allows users to generate perso
 In this application you will be able to create an account and play with the AI story tellers to create your own unique stories.
 
 ![image1](client/src/assets/presentationpic1.png)
-
+![image2](client/src/assets/presentationpic2.png)
+![image3](client/src/assets/presentationpic3.png)
+![image4](client/src/assets/presentationpic4.png)
+![image5](client/src/assets/presentationpic5.png)
+![image6](client/src/assets/presentationpic6.png)
+![image7](client/src/assets/presentationpic7.png)
+![image8](client/src/assets/presentationpic8.png)
+![image9](client/src/assets/presentationpic9.png)
+![image10](client/src/assets/presentationpic10.png)
+![image11](client/src/assets/presentationpic11.png)
 
 ## Getting Started
 
