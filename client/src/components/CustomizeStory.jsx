@@ -76,7 +76,7 @@ const CustomizeStory = () => {
         </div>
 
         <div className="customize-story-inputs-pronouns">
-          <h2>Choose your main character gender:</h2>
+          <h2>Choose your main character pronouns:</h2>
           <ul>
             <li>
               <button
